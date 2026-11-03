@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Ingeniero en Ciencias de la Computación</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#080C14',
+                        cardBg: '#0F172A',
+                        cardBorder: '#1E293B',
+                        emeraldAccent: '#10B981',
+                        emeraldGlow: '#059669',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #080C14;
+            color: #F1F5F9;
+        }
+        .glow-emerald {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
+        }
+        .glow-card:hover {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        .glass-nav {
+            background: rgba(8, 12, 20, 0.75);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-emeraldAccent selection:text-black">
+
+    <!-- Navegación Flotante -->
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 glass-nav border border-cardBorder rounded-full px-6 py-3 flex justify-between items-center transition-all duration-300">
+        <div class="font-mono text-emeraldAccent font-bold text-lg flex items-center gap-2">
+            <span class="text-xs px-2 py-0.5 rounded bg-emeraldAccent/10 border border-emeraldAccent/20">&lt;/&gt;</span>
+            <span>DEV.PORTAFOLIO</span>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+            <a href="#about" class="hover:text-emeraldAccent transition-colors">Sobre mí</a>
+            <a href="#projects" class="hover:text-emeraldAccent transition-colors">Proyectos</a>
+            <a href="#skills" class="hover:text-emeraldAccent transition-colors">Habilidades</a>
+            <a href="#experience" class="hover:text-emeraldAccent transition-colors">Trayectoria</a>
+        </div>
+        <a href="#contact" class="bg-emeraldAccent hover:bg-emerald-400 text-black font-semibold text-xs md:text-sm px-4 py-2 rounded-full transition-all">
+            Contacto
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center px-4 pt-24 text-center relative overflow-hidden">
+        <!-- Efecto de Fondo Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emeraldAccent/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emeraldAccent/30 bg-emeraldAccent/5 text-emeraldAccent text-xs font-mono mb-6">
+            <span class="w-2 h-2 rounded-full bg-emeraldAccent animate-ping"></span>
+            INGENIERÍA EN CIENCIAS DE LA COMPUTACIÓN
+        </div>
+
+        <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-4 max-w-4xl">
+            Construyendo soluciones de software <span class="text-transparent bg-clip-text bg-gradient-to-r from-emeraldAccent to-teal-200">escalables y eficientes.</span>
+        </h1>
+
+        <p class="text-slate-400 text-base md:text-xl max-w-2xl mb-8 font-light">
+            Especializado en ingeniería de software, arquitectura de sistemas y desarrollo full-stack. Transformando problemas complejos en sistemas elegantes.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#projects" class="bg-emeraldAccent text-black font-bold px-6 py-3 rounded-xl hover:bg-emerald-400 transition-all flex items-center gap-2 glow-emerald">
+                <i class="fa-solid fa-code"></i> Ver Proyectos
+            </a>
+            <a href="#" target="_blank" class="border border-cardBorder bg-cardBg hover:bg-slate-800 text-slate-200 font-semibold px-6 py-3 rounded-xl transition-all flex items-center gap-2">
+                <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
+            </a>
+            <a href="https://github.com/" target="_blank" class="border border-cardBorder bg-cardBg hover:bg-slate-800 text-slate-200 font-semibold px-4 py-3 rounded-xl transition-all">
+                <i class="fa-brands fa-github text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
+        <div class="border border-cardBorder bg-cardBg/60 rounded-3xl p-8 md:p-12 relative">
+            <div class="text-emeraldAccent font-mono text-sm mb-2">// 01. CONÓCEME</div>
+            <h2 class="text-3xl font-bold mb-6">Apasionado por el desarrollo y la innovación tecnológica</h2>
+            <p class="text-slate-300 leading-relaxed text-base md:text-lg mb-6">
+                Como estudiante / egresado de Ingeniería en Ciencias de la Computación, me enfoco en diseñar aplicaciones robustas y optimizadas. Me apasiona aprender nuevas tecnologías, trabajar con bases de datos y resolver algoritmos desafiantes.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-cardBorder">
+                <div>
+                    <div class="text-2xl font-bold text-emeraldAccent font-mono">10+</div>
+                    <div class="text-xs text-slate-400">Proyectos creados</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-emeraldAccent font-mono">CC</div>
+                    <div class="text-xs text-slate-400">Ciencias Computación</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-emeraldAccent font-mono">100%</div>
+                    <div class="text-xs text-slate-400">Código Limpio</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-emeraldAccent font-mono">2026</div>
+                    <div class="text-xs text-slate-400">Disponible prácticas/trabajo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="projects" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-emeraldAccent font-mono text-sm mb-2 text-center">// 02. MI TRABAJO</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Proyectos Destacados</h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Proyecto 1 -->
+            <div class="border border-cardBorder bg-cardBg rounded-2xl p-6 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fa-solid fa-folder-open text-3xl text-emeraldAccent"></i>
+                        <div class="flex gap-3 text-slate-400">
+                            <a href="#" target="_blank" class="hover:text-emeraldAccent"><i class="fa-brands fa-github text-lg"></i></a>
+                            <a href="#" target="_blank" class="hover:text-emeraldAccent"><i class="fa-solid fa-arrow-up-right-from-square text-lg"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-emeraldAccent transition-colors">Sistema de Gestión / Data Warehouse</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                        Plataforma desarrollada para el procesamiento de datos masivos y generación de reportes analíticos con métricas en tiempo real.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 font-mono text-xs text-emeraldAccent">
+                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">Python</span>
+                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">PostgreSQL</span>
+                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">Docker</span>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="border border-cardBorder bg-cardBg rounded-2xl p-6 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fa-solid fa-folder-open text-3xl text-emeraldAccent"></i>
+                        <div class="flex gap-3 text-slate-400">
+                            <a href="#" target="_blank" class="hover:text-emeraldAccent"><i class="fa-brands fa-github text-lg"></i></a>
+                            <a href="#" target="_blank" class="hover:text-emeraldAccent"><i class="fa-solid fa-arrow-up-right-from-square text-lg"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Aplicación Web Full-Stack</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                        Plataforma interactiva con autenticación de usuarios, API RESTful y dashboard administrativo completo.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 font-mono text-xs text-emeraldAccent">
+                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">JavaScript</span>
+                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">React</span>
+                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">Node.js</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="skills" class="py-20 px-4 max-w-5xl mx-auto">
+        <div class="text-emeraldAccent font-mono text-sm mb-2 text-center">// 03. STACK TECNOLÓGICO</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Habilidades & Tecnologías</h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div class="border border-cardBorder bg-cardBg/40 p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all">
+                <i class="fa-brands fa-python text-2xl text-emeraldAccent"></i>
+                <span class="font-medium text-sm">Python</span>
+            </div>
+            <div class="border border-cardBorder bg-cardBg/40 p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all">
+                <i class="fa-brands fa-js text-2xl text-emeraldAccent"></i>
+                <span class="font-medium text-sm">JavaScript</span>
+            </div>
+            <div class="border border-cardBorder bg-cardBg/40 p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all">
+                <i class="fa-brands fa-java text-2xl text-emeraldAccent"></i>
+                <span class="font-medium text-sm">Java / C++</span>
+            </div>
+            <div class="border border-cardBorder bg-cardBg/40 p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all">
+                <i class="fa-solid fa-database text-2xl text-emeraldAccent"></i>
+                <span class="font-medium text-sm">SQL / Postgres</span>
+            </div>
+            <div class="border border-cardBorder bg-cardBg/40 p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all">
+                <i class="fa-brands fa-git-alt text-2xl text-emeraldAccent"></i>
+                <span class="font-medium text-sm">Git & GitHub</span>
+            </div>
+            <div class="border border-cardBorder bg-cardBg/40 p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all">
+                <i class="fa-brands fa-docker text-2xl text-emeraldAccent"></i>
+                <span class="font-medium text-sm">Docker</span>
+            </div>
+            <div class="border border-cardBorder bg-cardBg/40 p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all">
+                <i class="fa-brands fa-linux text-2xl text-emeraldAccent"></i>
+                <span class="font-medium text-sm">Linux / Bash</span>
+            </div>
+            <div class="border border-cardBorder bg-cardBg/40 p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all">
+                <i class="fa-solid fa-network-wired text-2xl text-emeraldAccent"></i>
+                <span class="font-medium text-sm">Redes & Sistemas</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trayectoria / Experiencia -->
+    <section id="experience" class="py-20 px-4 max-w-4xl mx-auto">
+        <div class="text-emeraldAccent font-mono text-sm mb-2 text-center">// 04. CAMINO</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Trayectoria Académica</h2>
+
+        <div class="space-y-8 border-l-2 border-cardBorder pl-6 ml-4">
+            <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-emeraldAccent border-4 border-darkBg"></span>
+                <span class="text-xs font-mono text-emeraldAccent">2022 - Presente</span>
+                <h3 class="text-xl font-bold mt-1">Estudiante de Ingeniería en Ciencias de la Computación</h3>
+                <p class="text-slate-400 text-sm mt-2">
+                    Desarrollo de proyectos universitarios en estructuras de datos, sistemas operativos, bases de datos e ingeniería de software.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto / Footer -->
+    <section id="contact" class="py-20 px-4 max-w-4xl mx-auto text-center border-t border-cardBorder">
+        <div class="text-emeraldAccent font-mono text-sm mb-2">// 05. ¿HABLAMOS?</div>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">Ponte en contacto</h2>
+        <p class="text-slate-400 max-w-lg mx-auto mb-8">
+            Estoy abierto a oportunidades laborales, proyectos colaborativos o simplemente a conversar sobre tecnología.
+        </p>
+        
+        <a href="mailto:tu-email@correo.com" class="inline-block bg-emeraldAccent hover:bg-emerald-400 text-black font-bold px-8 py-4 rounded-full transition-all glow-emerald mb-12">
+            <i class="fa-solid fa-envelope mr-2"></i> Enviar Mensaje
+        </a>
+
+        <div class="flex justify-center gap-6 text-xl text-slate-400 mb-8">
+            <a href="https://github.com/" target="_blank" class="hover:text-emeraldAccent"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/" target="_blank" class="hover:text-emeraldAccent"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+
+        <p class="text-xs text-slate-500 font-mono">
+            © 2026 Diseñado & Desarrollado para Ciencias de la Computación.
+        </p>
+    </section>
+
+</body>
+</html>
