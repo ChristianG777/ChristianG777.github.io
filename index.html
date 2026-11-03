@@ -67,7 +67,7 @@
     <!-- Header / Navegación Flotante -->
     <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl z-50 glass-nav border dark:border-cardBorder border-lightBorder rounded-full px-5 py-3 flex justify-between items-center transition-all duration-300 dark:bg-darkBg/80 bg-white/80 shadow-lg">
         <a href="#" class="font-mono text-emeraldAccent font-bold text-base md:text-lg flex items-center gap-2">
-            <span class="text-xs px-2 py-0.5 rounded bg-emeraldAccent/10 border border-emeraldAccent/20">&lt;/&gt;</span>
+            <span class="text-base">🎓</span>
             <span class="tracking-tight">Christian Guerrero</span>
         </a>
         
@@ -111,7 +111,7 @@
 
         <div class="flex flex-wrap justify-center gap-4">
             <a href="#projects" class="bg-emeraldAccent text-black font-bold px-6 py-3 rounded-xl hover:bg-emerald-400 transition-all flex items-center gap-2 glow-emerald">
-                <i class="fa-solid fa-code"></i> Ver Proyectos
+                <i class="fa-solid fa-border-all"></i> Ver Proyectos
             </a>
             <a href="#" target="_blank" class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-200 text-slate-800 font-semibold px-6 py-3 rounded-xl transition-all flex items-center gap-2 shadow-sm">
                 <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
@@ -296,7 +296,6 @@
         const lightIcon = document.getElementById('theme-toggle-light-icon');
         const htmlElement = document.documentElement;
 
-        // Comprobar preferencia guardada
         if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
             htmlElement.classList.remove('dark');
             htmlElement.classList.add('light');
@@ -324,7 +323,7 @@
             }
         });
 
-        // 2. Script Botón Ir Arriba (Scroll to Top)
+        // 2. Script Botón Ir Arriba
         const backToTopBtn = document.getElementById('back-to-top');
 
         window.addEventListener('scroll', () => {
