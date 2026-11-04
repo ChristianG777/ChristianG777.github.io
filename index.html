@@ -233,7 +233,7 @@
 
         <!-- Grid para cargar las tarjetas de Proyectos -->
         <div id="projects-grid" class="grid md:grid-cols-2 gap-8">
-            <!-- Aquí vaciaremos los proyectos materia por materia -->
+            <!-- Los proyectos se cargan dinámicamente desde el script -->
         </div>
     </section>
 
@@ -396,105 +396,114 @@
                 <div class="text-emeraldAccent text-2xl mb-3">
                     <i class="fa-regular fa-envelope"></i>
                 </div>
-                <div class="font-bold text-lg dark:text-white text-slate-900 mb-1 group-hover:text-emeraldAccent transition-colors">
-                    Correo
-                </div>
-                <div class="font-mono text-xs md:text-sm text-slate-400 break-all">
-                    cjguerrero2006@gmail.com
-                </div>
+                <div class="text-xs font-mono text-slate-400 mb-1">CORREO ELECTRÓNICO</div>
+                <div class="font-semibold text-sm md:text-base dark:text-white text-slate-900 group-hover:text-emeraldAccent transition-colors">cjguerrero2006@gmail.com</div>
             </a>
 
             <a href="https://github.com/ChristianG777" target="_blank" class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white p-6 rounded-2xl glow-card transition-all shadow-md block group">
                 <div class="text-emeraldAccent text-2xl mb-3">
                     <i class="fa-brands fa-github"></i>
                 </div>
-                <div class="font-bold text-lg dark:text-white text-slate-900 mb-1 group-hover:text-emeraldAccent transition-colors">
-                    GitHub
-                </div>
-                <div class="font-mono text-xs md:text-sm text-slate-400 break-all">
-                    github.com/ChristianG777
-                </div>
+                <div class="text-xs font-mono text-slate-400 mb-1">GITHUB</div>
+                <div class="font-semibold text-sm md:text-base dark:text-white text-slate-900 group-hover:text-emeraldAccent transition-colors">github.com/ChristianG777</div>
             </a>
         </div>
 
-        <p class="text-xs dark:text-slate-500 text-slate-400 font-mono">
-            © 2026 Christian Guerrero — Diseñado & Desarrollado para Ciencias de la Computación.
-        </p>
+        <div class="text-xs font-mono text-slate-500">
+            © 2026 Christian Javier Guerrero Garzon. Desarrollado con Tailwind CSS.
+        </div>
     </section>
 
-    <!-- Botón Ir Arriba (Scroll to Top) -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 w-11 h-11 bg-emeraldAccent text-black rounded-xl shadow-lg flex items-center justify-center text-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-emerald-400 z-50 cursor-pointer">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
-
-    <!-- JavaScript Interactivo -->
+    <!-- Script de Lógica Interactiva -->
     <script>
+        // Array de datos con tus proyectos por materia
+        const projectsData = [
+            {
+                category: 'db',
+                tag: 'ORDINARIO II - 2025 - PROYECTO FINAL',
+                title: 'Sistema de Gestión de Asociación',
+                description: 'Aplicación de escritorio en Java Swing para la gestión integral de miembros, membresías, pagos y contratos, integrada con persistencia en PostgreSQL, vistas, funciones stored procedures y triggers.',
+                techs: ['Java', 'PostgreSQL', 'SQL', 'Git & GitHub'],
+                repoUrl: 'https://github.com/ChristianG777/proyecto-bd1-asociacion'
+            }
+            // Aquí podrás ir agregando tus proyectos de POO, ED, LP y SO más adelante
+        ];
+
+        // Función para renderizar las tarjetas de proyectos
+        function renderProjects(filter = 'all') {
+            const grid = document.getElementById('projects-grid');
+            grid.innerHTML = '';
+
+            const filteredData = filter === 'all' 
+                ? projectsData 
+                : projectsData.filter(p => p.category === filter);
+
+            if (filteredData.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 border dark:border-cardBorder border-lightBorder rounded-2xl">
+                        <i class="fa-solid fa-code text-3xl text-slate-500 mb-3"></i>
+                        <p class="text-slate-400 font-mono text-sm">Próximamente agregando proyectos para esta materia...</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredData.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-lg glow-card transition-all';
+                
+                const techsHTML = project.techs.map(tech => 
+                    `<span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-slate-800 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800">${tech}</span>`
+                ).join('');
+
+                card.innerHTML = `
+                    <div>
+                        <div class="font-mono text-xs text-slate-400 font-bold mb-2 tracking-wider">${project.tag}</div>
+                        <h3 class="text-2xl font-bold dark:text-white text-slate-900 mb-3">${project.title}</h3>
+                        <p class="dark:text-slate-400 text-slate-600 text-sm leading-relaxed mb-6">${project.description}</p>
+                        <div class="flex flex-wrap gap-2 mb-8">${techsHTML}</div>
+                    </div>
+                    <div class="pt-4 border-t dark:border-cardBorder border-lightBorder flex items-center">
+                        <a href="${project.repoUrl}" target="_blank" class="inline-flex items-center gap-2 bg-emeraldAccent/10 border border-emeraldAccent/30 text-emeraldAccent hover:bg-emeraldAccent hover:text-black font-semibold px-5 py-2.5 rounded-full text-xs md:text-sm transition-all duration-200">
+                            <i class="fa-brands fa-github text-base"></i> Repositorio
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Función para los botones de filtrado
+        function filterProjects(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            renderProjects(category);
+        }
+
+        // Cambio de Modo Claro / Oscuro
         const themeToggleBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
-        const htmlElement = document.documentElement;
 
-        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-            htmlElement.classList.remove('dark');
-            htmlElement.classList.add('light');
-            darkIcon.classList.add('hidden');
-            lightIcon.classList.remove('hidden');
-        } else {
-            htmlElement.classList.remove('light');
-            htmlElement.classList.add('dark');
-            lightIcon.classList.add('hidden');
-            darkIcon.classList.remove('hidden');
-        }
-
-        themeToggleBtn.addEventListener('click', function() {
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
-
-            if (htmlElement.classList.contains('dark')) {
-                htmlElement.classList.remove('dark');
-                htmlElement.classList.add('light');
-                localStorage.setItem('color-theme', 'light');
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            document.documentElement.classList.toggle('light', !isDark);
+            
+            if (isDark) {
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
             } else {
-                htmlElement.classList.remove('light');
-                htmlElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
             }
         });
 
-        const backToTopBtn = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-                backToTopBtn.classList.add('opacity-100');
-            } else {
-                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-                backToTopBtn.classList.remove('opacity-100');
-            }
+        // Inicializar al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects('all');
         });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Lógica de Filtrado de Proyectos
-        function filterProjects(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            const projects = document.querySelectorAll('.project-card');
-            projects.forEach(project => {
-                if (category === 'all' || project.getAttribute('data-category') === category) {
-                    project.style.display = 'flex';
-                } else {
-                    project.style.display = 'none';
-                }
-            });
-        }
     </script>
 </body>
 </html>
