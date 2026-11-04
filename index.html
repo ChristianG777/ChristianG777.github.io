@@ -66,6 +66,18 @@
             border-color: #10B981;
             font-weight: 700;
         }
+
+        /* ESTILOS PARA ANIMACIONES AL HACER SCROLL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-emeraldAccent selection:text-black">
@@ -99,7 +111,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center px-4 pt-24 text-center relative overflow-hidden">
+    <section class="min-h-screen flex flex-col justify-center items-center px-4 pt-24 text-center relative overflow-hidden reveal">
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emeraldAccent/15 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emeraldAccent/30 bg-emeraldAccent/10 text-emeraldAccent text-xs font-mono mb-6">
@@ -129,7 +141,7 @@
     </section>
 
     <!-- Sobre Mí -->
-    <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
+    <section id="about" class="py-20 px-4 max-w-5xl mx-auto reveal">
         <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg/60 bg-white rounded-3xl p-8 md:p-12 relative shadow-lg">
             <div class="text-emeraldAccent font-mono text-sm mb-2 font-semibold">CONÓCEME</div>
             <h2 class="text-3xl font-bold mb-6 dark:text-white text-slate-900">Apasionado por el desarrollo y la innovación tecnológica</h2>
@@ -140,7 +152,7 @@
     </section>
 
     <!-- Habilidades & Tecnologías Aprendidas -->
-    <section id="skills" class="py-20 px-4 max-w-6xl mx-auto">
+    <section id="skills" class="py-20 px-4 max-w-6xl mx-auto reveal">
         <div class="text-emeraldAccent font-mono text-sm mb-2 text-center font-semibold">MIS HABILIDADES</div>
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Tecnologías aprendidas</h2>
 
@@ -205,7 +217,7 @@
     </section>
 
     <!-- Proyectos con Filtros por Materia -->
-    <section id="projects" class="py-20 px-4 max-w-6xl mx-auto">
+    <section id="projects" class="py-20 px-4 max-w-6xl mx-auto reveal">
         <div class="text-emeraldAccent font-mono text-sm mb-2 text-center font-semibold">MIS TRABAJOS</div>
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 dark:text-white text-slate-900">Proyectos</h2>
 
@@ -238,7 +250,7 @@
     </section>
 
     <!-- Sección Mis Certificaciones AWS -->
-    <section id="certifications" class="py-20 px-4 max-w-5xl mx-auto">
+    <section id="certifications" class="py-20 px-4 max-w-5xl mx-auto reveal">
         <div class="text-emeraldAccent font-mono text-sm mb-2 text-center font-semibold">FORMACIÓN</div>
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Mis Certificaciones</h2>
 
@@ -318,7 +330,7 @@
     </section>
 
     <!-- Sección Hackathones / Participación en Eventos Tecnológicos -->
-    <section id="teamwork" class="py-20 px-4 max-w-6xl mx-auto">
+    <section id="teamwork" class="py-20 px-4 max-w-6xl mx-auto reveal">
         <div class="text-emeraldAccent font-mono text-sm mb-2 text-center font-semibold">TRABAJOS EN EQUIPO</div>
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Hackathones</h2>
 
@@ -384,7 +396,7 @@
     </section>
 
     <!-- Contacto / Footer -->
-    <section id="contact" class="py-20 px-4 max-w-4xl mx-auto text-center border-t dark:border-cardBorder border-lightBorder">
+    <section id="contact" class="py-20 px-4 max-w-4xl mx-auto text-center border-t dark:border-cardBorder border-lightBorder reveal">
         <div class="text-emeraldAccent font-mono text-sm mb-2 font-semibold">CONTACTO</div>
         <h2 class="text-3xl md:text-5xl font-bold mb-6 dark:text-white text-slate-900">Hablemos</h2>
         <p class="dark:text-slate-400 text-slate-600 max-w-lg mx-auto mb-10">
@@ -414,12 +426,13 @@
         </div>
     </section>
 
-    <!-- Script de Lógica Interactiva -->
+    <!-- Script de Lógica Interactiva & Animaciones -->
     <script>
-        // Array de datos con los 6 proyectos organizados por completo
+        // Array de datos con los 6 proyectos organizados por materia y sus etiquetas de materia
         const projectsData = [
             {
                 category: 'lp',
+                subjectLabel: 'Lenguajes de Programación',
                 tag: 'ORDINARIO II - 2026 - PRIMER PARCIAL',
                 title: 'Proyecto Integrador — Módulo de Administración',
                 description: 'Sistema web integral desarrollado de forma colaborativa por un equipo de 20 desarrolladores. Enfoque directo en el diseño, desarrollo e integración del Módulo de Administración (Grupo 1), gestionando autenticación, flujos de usuarios, procesamiento de reglas de negocio y conexión backend.',
@@ -428,6 +441,7 @@
             },
             {
                 category: 'so',
+                subjectLabel: 'Sistemas Operativos',
                 tag: 'ORDINARIO II - 2026 - PROYECTO FINAL',
                 title: 'Sistema de Impresoras en Red',
                 description: 'Modelado y simulación para la administración de impresoras compartidas en red y gestión concurrente de procesos de impresión, optimizando el uso de recursos entre múltiples usuarios mediante conceptos de sistemas operativos, arquitectura de hardware y comunicaciones.',
@@ -436,6 +450,7 @@
             },
             {
                 category: 'ed',
+                subjectLabel: 'Estructura de Datos',
                 tag: 'ORDINARIO II - 2026 - PRIMER PARCIAL',
                 title: 'Sistema de Gestión de Flujo Aeroportuario (AirportFlowManager)',
                 description: 'Sistema desarrollado en Java para la simulación y optimización del flujo de pasajeros, procesamiento de equipajes y colas de atención en aeropuertos, implementando estructuras de datos lineales como listas enlazadas, listas basadas en arreglos y gestión dinámica de nodos.',
@@ -444,6 +459,7 @@
             },
             {
                 category: 'poo',
+                subjectLabel: 'POO',
                 tag: 'ORDINARIO II - 2026 - PROYECTO FINAL',
                 title: 'Sistema de Simulación FarmVille Consola',
                 description: 'Aplicación interactiva por consola desarrollada en Java bajo el paradigma de Programación Orientada a Objetos (POO). Modela la gestión completa de una granja simulando el ciclo de vida de cultivos y animales, manejo de recursos, excepciones personalizadas (AnimalNoAlimentadoException, CultivoNoListoException) y documentación técnica completa generada en JavaDoc.',
@@ -452,6 +468,7 @@
             },
             {
                 category: 'db',
+                subjectLabel: 'Base de Datos',
                 tag: 'EXTRAORDINARIO - 2026 - PROYECTO FINAL',
                 title: 'Sistema de Gestión de Munich Startup',
                 description: 'Aplicación orientada a backend y modelo de datos para la gestión integral de startups, inversionistas y rondas de financiamiento, integrada con persistencia en MySQL, ETL en Pentaho Kettle, vistas, stored procedures y lógica de negocio en Kotlin.',
@@ -460,6 +477,7 @@
             },
             {
                 category: 'db',
+                subjectLabel: 'Base de Datos',
                 tag: 'ORDINARIO II - 2025 - PROYECTO FINAL',
                 title: 'Sistema de Gestión de Asociación',
                 description: 'Aplicación de escritorio en Java Swing para la gestión integral de miembros, membresías, pagos y contratos, integrada con persistencia en PostgreSQL, vistas, funciones stored procedures y triggers.',
@@ -489,7 +507,7 @@
 
             filteredData.forEach(project => {
                 const card = document.createElement('div');
-                card.className = 'border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-lg glow-card transition-all';
+                card.className = 'border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-lg glow-card transition-all relative reveal active';
                 
                 const techsHTML = project.techs.map(tech => 
                     `<span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-slate-800 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800">${tech}</span>`
@@ -497,6 +515,12 @@
 
                 card.innerHTML = `
                     <div>
+                        <!-- Etiqueta Flotante con Nombre de la Materia -->
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emeraldAccent/30 dark:bg-slate-800/90 bg-slate-100 text-emeraldAccent font-mono text-xs font-bold mb-4 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emeraldAccent"></span>
+                            ${project.subjectLabel}
+                        </div>
+
                         <div class="font-mono text-xs text-slate-400 font-bold mb-2 tracking-wider">${project.tag}</div>
                         <h3 class="text-2xl font-bold dark:text-white text-slate-900 mb-3">${project.title}</h3>
                         <p class="dark:text-slate-400 text-slate-600 text-sm leading-relaxed mb-6">${project.description}</p>
@@ -521,6 +545,25 @@
             renderProjects(category);
         }
 
+        // Lógica de Animaciones al hacer Scroll (Reveal on Scroll)
+        function initScrollAnimations() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
         // Cambio de Modo Claro / Oscuro
         const themeToggleBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -542,6 +585,7 @@
         // Inicializar al cargar la página
         document.addEventListener('DOMContentLoaded', () => {
             renderProjects('all');
+            initScrollAnimations();
         });
     </script>
 </body>
