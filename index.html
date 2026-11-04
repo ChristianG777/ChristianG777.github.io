@@ -73,9 +73,9 @@
         
         <div class="hidden md:flex items-center gap-6 text-sm font-medium dark:text-slate-300 text-slate-700">
             <a href="#about" class="hover:text-emeraldAccent transition-colors">Sobre mí</a>
-            <a href="#projects" class="hover:text-emeraldAccent transition-colors">Proyectos</a>
             <a href="#skills" class="hover:text-emeraldAccent transition-colors">Habilidades</a>
-            <a href="#experience" class="hover:text-emeraldAccent transition-colors">Trayectoria</a>
+            <a href="#projects" class="hover:text-emeraldAccent transition-colors">Proyectos</a>
+            <a href="#experience" class="hover:text-emeraldAccent transition-colors">Certificaciones</a>
         </div>
 
         <div class="flex items-center gap-3">
@@ -125,7 +125,7 @@
     <!-- Sobre Mí -->
     <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
         <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg/60 bg-white rounded-3xl p-8 md:p-12 relative shadow-lg">
-            <div class="text-emeraldAccent font-mono text-sm mb-2">// 01. CONÓCEME</div>
+            <div class="text-emeraldAccent font-mono text-sm mb-2 font-semibold">CONÓCEME</div>
             <h2 class="text-3xl font-bold mb-6 dark:text-white text-slate-900">Apasionado por el desarrollo y la innovación tecnológica</h2>
             <p class="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg">
                 Como estudiante de Ingeniería en Ciencias de la Computación, me enfoco en diseñar aplicaciones robustas, limpias y estructuradas. Me apasiona resolver problemas complejos mediante algoritmos eficientes y aprender constantemente sobre las tecnologías líderes de la industria.
@@ -133,10 +133,79 @@
         </div>
     </section>
 
+    <!-- Habilidades & Tecnologías Aprendidas -->
+    <section id="skills" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-emeraldAccent font-mono text-sm mb-2 text-center font-semibold">MIS HABILIDADES</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Tecnologías aprendidas</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Desarrollo Software & Web -->
+            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-2 mb-4 text-emeraldAccent font-bold text-lg">
+                        <i class="fa-solid fa-code"></i>
+                        <h3>Desarrollo Software & Web</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-brands fa-java text-emeraldAccent"></i> Java</span>
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-brands fa-python text-emeraldAccent"></i> Python</span>
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-brands fa-php text-emeraldAccent"></i> PHP</span>
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-brands fa-laravel text-emeraldAccent"></i> Laravel</span>
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-brain text-emeraldAccent"></i> Prolog</span>
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-brands fa-unity text-emeraldAccent"></i> Unity</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desarrollo Móvil -->
+            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-2 mb-4 text-emeraldAccent font-bold text-lg">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <h3>Desarrollo Móvil</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-brands fa-android text-emeraldAccent"></i> Android Studio</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bases de Datos & ETL -->
+            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-2 mb-4 text-emeraldAccent font-bold text-lg">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>Bases de Datos & ETL</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-database text-emeraldAccent"></i> PostgreSQL</span>
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-table text-emeraldAccent"></i> SQL</span>
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-filter text-emeraldAccent"></i> Pentaho</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sistemas e Infraestructura -->
+            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-2 mb-4 text-emeraldAccent font-bold text-lg">
+                        <i class="fa-solid fa-microchip"></i>
+                        <h3>Sistemas e Infraestructura</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-brands fa-github text-emeraldAccent"></i> Git & GitHub</span>
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-network-wired text-emeraldAccent"></i> Redes & Com.</span>
+                        <span class="px-3 py-1.5 rounded-lg border dark:border-cardBorder border-lightBorder dark:bg-cardBg/80 bg-slate-100 text-xs font-semibold dark:text-slate-200 text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-server text-emeraldAccent"></i> Arq. de Hardware</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Proyectos -->
     <section id="projects" class="py-20 px-4 max-w-6xl mx-auto">
-        <div class="text-emeraldAccent font-mono text-sm mb-2 text-center">// 02. MI TRABAJO</div>
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Proyectos Destacados</h2>
+        <div class="text-emeraldAccent font-mono text-sm mb-2 text-center font-semibold">MIS TRABAJOS</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Proyectos</h2>
 
         <div class="grid md:grid-cols-2 gap-8">
             <!-- Proyecto 1 -->
@@ -157,7 +226,7 @@
                 <div class="flex flex-wrap gap-2 font-mono text-xs text-emeraldAccent">
                     <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">Python</span>
                     <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">PostgreSQL</span>
-                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">Docker</span>
+                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">Pentaho</span>
                 </div>
             </div>
 
@@ -173,71 +242,41 @@
                     </div>
                     <h3 class="text-xl font-bold mb-2 dark:text-white text-slate-900">Aplicación Web Full-Stack</h3>
                     <p class="dark:text-slate-400 text-slate-600 text-sm mb-6 leading-relaxed">
-                        Aplicación web responsiva con sistema de autenticación de usuarios, consumo de APIs RESTful y dashboard administrativo completo.
+                        Aplicación web responsiva desarrollada con arquitectura MVC, gestión de usuarios e integración de base de datos relacional.
                     </p>
                 </div>
                 <div class="flex flex-wrap gap-2 font-mono text-xs text-emeraldAccent">
-                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">JavaScript</span>
-                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">React</span>
-                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">Node.js</span>
+                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">PHP</span>
+                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">Laravel</span>
+                    <span class="bg-emeraldAccent/10 px-2.5 py-1 rounded-md">SQL</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Habilidades -->
-    <section id="skills" class="py-20 px-4 max-w-5xl mx-auto">
-        <div class="text-emeraldAccent font-mono text-sm mb-2 text-center">// 03. STACK TECNOLÓGICO</div>
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Habilidades & Tecnologías</h2>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg/40 bg-white p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all shadow-sm">
-                <i class="fa-brands fa-python text-2xl text-emeraldAccent"></i>
-                <span class="font-medium text-sm dark:text-slate-200 text-slate-800">Python</span>
-            </div>
-            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg/40 bg-white p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all shadow-sm">
-                <i class="fa-brands fa-js text-2xl text-emeraldAccent"></i>
-                <span class="font-medium text-sm dark:text-slate-200 text-slate-800">JavaScript</span>
-            </div>
-            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg/40 bg-white p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all shadow-sm">
-                <i class="fa-brands fa-java text-2xl text-emeraldAccent"></i>
-                <span class="font-medium text-sm dark:text-slate-200 text-slate-800">Java / C++</span>
-            </div>
-            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg/40 bg-white p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all shadow-sm">
-                <i class="fa-solid fa-database text-2xl text-emeraldAccent"></i>
-                <span class="font-medium text-sm dark:text-slate-200 text-slate-800">SQL / Postgres</span>
-            </div>
-            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg/40 bg-white p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all shadow-sm">
-                <i class="fa-brands fa-git-alt text-2xl text-emeraldAccent"></i>
-                <span class="font-medium text-sm dark:text-slate-200 text-slate-800">Git & GitHub</span>
-            </div>
-            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg/40 bg-white p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all shadow-sm">
-                <i class="fa-brands fa-docker text-2xl text-emeraldAccent"></i>
-                <span class="font-medium text-sm dark:text-slate-200 text-slate-800">Docker</span>
-            </div>
-            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg/40 bg-white p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all shadow-sm">
-                <i class="fa-brands fa-linux text-2xl text-emeraldAccent"></i>
-                <span class="font-medium text-sm dark:text-slate-200 text-slate-800">Linux / Bash</span>
-            </div>
-            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg/40 bg-white p-4 rounded-xl flex items-center gap-3 hover:border-emeraldAccent/40 transition-all shadow-sm">
-                <i class="fa-solid fa-network-wired text-2xl text-emeraldAccent"></i>
-                <span class="font-medium text-sm dark:text-slate-200 text-slate-800">Redes & Sistemas</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trayectoria / Experiencia -->
+    <!-- Formación / Certificaciones -->
     <section id="experience" class="py-20 px-4 max-w-4xl mx-auto">
-        <div class="text-emeraldAccent font-mono text-sm mb-2 text-center">// 04. CAMINO</div>
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Trayectoria Académica</h2>
+        <div class="text-emeraldAccent font-mono text-sm mb-2 text-center font-semibold">FORMACIÓN</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Mis Certificaciones</h2>
 
         <div class="space-y-8 border-l-2 dark:border-cardBorder border-lightBorder pl-6 ml-4">
+            <!-- Certificación / Logro 1 -->
             <div class="relative">
                 <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-emeraldAccent border-4 dark:border-darkBg border-lightBg"></span>
-                <span class="text-xs font-mono text-emeraldAccent">UEES • En Curso</span>
-                <h3 class="text-xl font-bold mt-1 dark:text-white text-slate-900">Ingeniería en Ciencias de la Computación</h3>
+                <span class="text-xs font-mono text-emeraldAccent">Trabajos en equipo</span>
+                <h3 class="text-xl font-bold mt-1 dark:text-white text-slate-900">Proyectos Colaborativos Académicos</h3>
                 <p class="dark:text-slate-400 text-slate-600 text-sm mt-2">
-                    Formación intensiva en estructuras de datos, programación orientada a objetos, bases de datos avanzadas, ingeniería de software y desarrollo de sistemas.
+                    Desarrollo en equipo aplicando metodologías de software, control de versiones con Git/GitHub y resolución conjunta de algoritmos complejos.
+                </p>
+            </div>
+
+            <!-- Certificación / Logro 2 -->
+            <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-emeraldAccent border-4 dark:border-darkBg border-lightBg"></span>
+                <span class="text-xs font-mono dark:text-white text-slate-900 font-semibold">Hackathones</span>
+                <h3 class="text-xl font-bold mt-1 dark:text-white text-slate-900">Participación en Eventos Tecnológicos</h3>
+                <p class="dark:text-slate-400 text-slate-600 text-sm mt-2">
+                    Desafíos de programación intensiva, prototipado rápido e implementación de soluciones bajo presión.
                 </p>
             </div>
         </div>
@@ -245,19 +284,39 @@
 
     <!-- Contacto / Footer -->
     <section id="contact" class="py-20 px-4 max-w-4xl mx-auto text-center border-t dark:border-cardBorder border-lightBorder">
-        <div class="text-emeraldAccent font-mono text-sm mb-2">// 05. ¿HABLAMOS?</div>
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 dark:text-white text-slate-900">Ponte en contacto</h2>
-        <p class="dark:text-slate-400 text-slate-600 max-w-lg mx-auto mb-8">
+        <div class="text-emeraldAccent font-mono text-sm mb-2 font-semibold">CONTACTO</div>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 dark:text-white text-slate-900">Hablemos</h2>
+        <p class="dark:text-slate-400 text-slate-600 max-w-lg mx-auto mb-10">
             Estoy abierto a oportunidades de prácticas, proyectos colaborativos o simplemente a intercambiar ideas sobre tecnología.
         </p>
         
-        <a href="mailto:christian.guerrerog@uees.edu.ec" class="inline-block bg-emeraldAccent hover:bg-emerald-400 text-black font-bold px-8 py-4 rounded-full transition-all glow-emerald mb-12">
-            <i class="fa-solid fa-envelope mr-2"></i> Enviar Correo
-        </a>
+        <!-- Tarjetas Estilo Referencia para Correo y GitHub -->
+        <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-16 text-left">
+            <!-- Tarjeta Correo -->
+            <a href="mailto:cjguerrero2006@gmail.com" class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white p-6 rounded-2xl glow-card transition-all shadow-md block group">
+                <div class="text-emeraldAccent text-2xl mb-3">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="font-bold text-lg dark:text-white text-slate-900 mb-1 group-hover:text-emeraldAccent transition-colors">
+                    Correo
+                </div>
+                <div class="font-mono text-xs md:text-sm text-slate-400 break-all">
+                    cjguerrero2006@gmail.com
+                </div>
+            </a>
 
-        <div class="flex justify-center gap-6 text-2xl dark:text-slate-400 text-slate-600 mb-8">
-            <a href="https://github.com/ChristianG777" target="_blank" class="hover:text-emeraldAccent transition-colors" title="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="mailto:christian.guerrerog@uees.edu.ec" class="hover:text-emeraldAccent transition-colors" title="Correo Email"><i class="fa-solid fa-envelope"></i></a>
+            <!-- Tarjeta GitHub -->
+            <a href="https://github.com/ChristianG777" target="_blank" class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white p-6 rounded-2xl glow-card transition-all shadow-md block group">
+                <div class="text-emeraldAccent text-2xl mb-3">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <div class="font-bold text-lg dark:text-white text-slate-900 mb-1 group-hover:text-emeraldAccent transition-colors">
+                    GitHub
+                </div>
+                <div class="font-mono text-xs md:text-sm text-slate-400 break-all">
+                    github.com/ChristianG777
+                </div>
+            </a>
         </div>
 
         <p class="text-xs dark:text-slate-500 text-slate-400 font-mono">
