@@ -80,7 +80,6 @@
         </div>
 
         <div class="flex items-center gap-3">
-            <!-- Botón Cambio Modo Claro / Oscuro -->
             <button id="theme-toggle" class="w-9 h-9 rounded-full flex items-center justify-center border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-slate-100 dark:text-emeraldAccent text-slate-800 hover:scale-110 transition-all cursor-pointer" title="Cambiar Tema">
                 <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-sm"></i>
                 <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-sm hidden text-amber-500"></i>
@@ -204,7 +203,7 @@
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Proyectos</h2>
 
         <div id="projects-grid" class="grid md:grid-cols-2 gap-8">
-            <!-- Aquí agregaremos tus proyectos reales -->
+            <!-- Espacio reservado para los proyectos principales -->
         </div>
     </section>
 
@@ -289,12 +288,68 @@
     </section>
 
     <!-- Sección Hackathones / Participación en Eventos Tecnológicos -->
-    <section id="teamwork" class="py-20 px-4 max-w-4xl mx-auto">
+    <section id="teamwork" class="py-20 px-4 max-w-6xl mx-auto">
         <div class="text-emeraldAccent font-mono text-sm mb-2 text-center font-semibold">TRABAJOS EN EQUIPO</div>
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Hackathones</h2>
 
-        <div class="space-y-8 border-l-2 dark:border-cardBorder border-lightBorder pl-6 ml-4">
-            <!-- Espacio reservado para hackathones futuros -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Hackathon 1: Green Power Hack (SILTUS) -->
+            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white rounded-2xl p-6 glow-card transition-all duration-300 flex flex-col justify-between shadow-md">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="font-mono text-xs text-slate-400 font-semibold">GREEN POWER HACK</span>
+                        <i class="fa-solid fa-bolt text-2xl text-emeraldAccent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1 dark:text-white text-slate-900">SILTUS — Baldosa Piezoeléctrica</h3>
+                    <div class="text-xs font-mono text-emeraldAccent mb-3 font-semibold">Track: Generación y Almacenamiento de Energía</div>
+                    <p class="dark:text-slate-400 text-slate-600 text-sm mb-6 leading-relaxed">
+                        Desarrollo de una baldosa piezoeléctrica que convierte el impacto mecánico de las pisadas en áreas de alto tránsito en energía eléctrica limpia para alimentar dispositivos de bajo consumo y sistemas de respaldo.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+                        <span class="bg-emeraldAccent/10 text-emeraldAccent px-2.5 py-1 rounded-md">Piezoelectricidad</span>
+                        <span class="bg-emeraldAccent/10 text-emeraldAccent px-2.5 py-1 rounded-md">Energía Limpia</span>
+                        <span class="bg-emeraldAccent/10 text-emeraldAccent px-2.5 py-1 rounded-md">Hardware</span>
+                        <span class="bg-emeraldAccent/10 text-emeraldAccent px-2.5 py-1 rounded-md">Sostenibilidad</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-4 border-t dark:border-cardBorder border-lightBorder">
+                    <a href="ecohack.pdf" target="_blank" class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white dark:text-slate-300 text-slate-700 font-semibold px-4 py-2 rounded-xl text-xs flex items-center gap-2 hover:border-emeraldAccent transition-all shadow-sm">
+                        <i class="fa-regular fa-file-pdf text-red-400"></i> Documentación
+                    </a>
+                    <a href="https://github.com/ChristianG777" target="_blank" class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white dark:text-slate-300 text-slate-700 font-semibold px-4 py-2 rounded-xl text-xs flex items-center gap-2 hover:border-emeraldAccent transition-all shadow-sm">
+                        <i class="fa-brands fa-github text-emeraldAccent"></i> Repositorio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hackathon 2: TIC AMERICAS (EcoTile) -->
+            <div class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white rounded-2xl p-6 glow-card transition-all duration-300 flex flex-col justify-between shadow-md">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="font-mono text-xs text-slate-400 font-semibold">TIC AMERICAS</span>
+                        <i class="fa-solid fa-leaf text-2xl text-emeraldAccent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1 dark:text-white text-slate-900">EcoTile — Energía Sostenible Urbana</h3>
+                    <div class="text-xs font-mono text-emeraldAccent mb-3 font-semibold">Track: Innovación Ambiental & Ciudades Inteligentes</div>
+                    <p class="dark:text-slate-400 text-slate-600 text-sm mb-6 leading-relaxed">
+                        Propuesta de valor integral y modelo de negocio sostenible enfocado en la transición energética urbana y mitigación de déficit eléctrico mediante la recolección cinético-piezoeléctrica en espacios públicos.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+                        <span class="bg-emeraldAccent/10 text-emeraldAccent px-2.5 py-1 rounded-md">Smart Cities</span>
+                        <span class="bg-emeraldAccent/10 text-emeraldAccent px-2.5 py-1 rounded-md">ODS 7 & 9</span>
+                        <span class="bg-emeraldAccent/10 text-emeraldAccent px-2.5 py-1 rounded-md">Modelado Financiero</span>
+                        <span class="bg-emeraldAccent/10 text-emeraldAccent px-2.5 py-1 rounded-md">EcoTech</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-4 border-t dark:border-cardBorder border-lightBorder">
+                    <a href="ecotile.pdf" target="_blank" class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white dark:text-slate-300 text-slate-700 font-semibold px-4 py-2 rounded-xl text-xs flex items-center gap-2 hover:border-emeraldAccent transition-all shadow-sm">
+                        <i class="fa-regular fa-file-pdf text-red-400"></i> Documentación
+                    </a>
+                    <a href="https://github.com/ChristianG777" target="_blank" class="border dark:border-cardBorder border-lightBorder dark:bg-cardBg bg-white dark:text-slate-300 text-slate-700 font-semibold px-4 py-2 rounded-xl text-xs flex items-center gap-2 hover:border-emeraldAccent transition-all shadow-sm">
+                        <i class="fa-brands fa-github text-emeraldAccent"></i> Repositorio
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
