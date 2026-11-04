@@ -60,6 +60,12 @@
         .glass-nav {
             backdrop-filter: blur(12px);
         }
+        .filter-btn.active {
+            background-color: #10B981;
+            color: #000000;
+            border-color: #10B981;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-emeraldAccent selection:text-black">
@@ -198,13 +204,36 @@
         </div>
     </section>
 
-    <!-- Proyectos -->
+    <!-- Proyectos con Filtros por Materia -->
     <section id="projects" class="py-20 px-4 max-w-6xl mx-auto">
         <div class="text-emeraldAccent font-mono text-sm mb-2 text-center font-semibold">MIS TRABAJOS</div>
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white text-slate-900">Proyectos</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 dark:text-white text-slate-900">Proyectos</h2>
 
+        <!-- Barra de Botones de Filtro -->
+        <div class="flex flex-wrap justify-center gap-2.5 mb-10">
+            <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-full border dark:border-cardBorder border-lightBorder text-xs md:text-sm font-medium dark:text-slate-300 text-slate-700 hover:border-emeraldAccent transition-all cursor-pointer">
+                Todos
+            </button>
+            <button onclick="filterProjects('db')" class="filter-btn px-4 py-2 rounded-full border dark:border-cardBorder border-lightBorder text-xs md:text-sm font-medium dark:text-slate-300 text-slate-700 hover:border-emeraldAccent transition-all cursor-pointer">
+                Base de Datos
+            </button>
+            <button onclick="filterProjects('poo')" class="filter-btn px-4 py-2 rounded-full border dark:border-cardBorder border-lightBorder text-xs md:text-sm font-medium dark:text-slate-300 text-slate-700 hover:border-emeraldAccent transition-all cursor-pointer">
+                POO
+            </button>
+            <button onclick="filterProjects('ed')" class="filter-btn px-4 py-2 rounded-full border dark:border-cardBorder border-lightBorder text-xs md:text-sm font-medium dark:text-slate-300 text-slate-700 hover:border-emeraldAccent transition-all cursor-pointer">
+                Estructura de Datos
+            </button>
+            <button onclick="filterProjects('lp')" class="filter-btn px-4 py-2 rounded-full border dark:border-cardBorder border-lightBorder text-xs md:text-sm font-medium dark:text-slate-300 text-slate-700 hover:border-emeraldAccent transition-all cursor-pointer">
+                Lenguajes de Programación
+            </button>
+            <button onclick="filterProjects('so')" class="filter-btn px-4 py-2 rounded-full border dark:border-cardBorder border-lightBorder text-xs md:text-sm font-medium dark:text-slate-300 text-slate-700 hover:border-emeraldAccent transition-all cursor-pointer">
+                Sistemas Operativos
+            </button>
+        </div>
+
+        <!-- Grid para cargar las tarjetas de Proyectos -->
         <div id="projects-grid" class="grid md:grid-cols-2 gap-8">
-            <!-- Espacio reservado para los proyectos principales -->
+            <!-- Aquí vaciaremos los proyectos materia por materia -->
         </div>
     </section>
 
@@ -450,6 +479,22 @@
                 behavior: 'smooth'
             });
         });
+
+        // Lógica de Filtrado de Proyectos
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const projects = document.querySelectorAll('.project-card');
+            projects.forEach(project => {
+                if (category === 'all' || project.getAttribute('data-category') === category) {
+                    project.style.display = 'flex';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
     </script>
 </body>
 </html>
